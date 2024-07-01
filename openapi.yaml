@@ -1,0 +1,325 @@
+openapi: 3.0.0
+info:
+  title: Pemrograman Public
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+  - url: https://130.162.195.228
+tags:
+  - name: Login_Auth Copy
+  - name: User Copy
+  - name: Product Copy
+  - name: Plant Copy
+  - name: Pdiseases Copy
+  - name: New Folder Copy
+paths:
+  /api/login:
+    post:
+      tags:
+        - Login_Auth Copy
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nama_lengkap: Elysia
+                username: Ely
+                password: loveyouelysia
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/register:
+    post:
+      tags:
+        - Login_Auth Copy
+      summary: Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                nama_lengkap: ''
+                username: ''
+                password: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logout:
+    get:
+      tags:
+        - Login_Auth Copy
+      summary: Logout
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/api/users:
+    get:
+      tags:
+        - User Copy
+      summary: GetUser
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/update:
+    put:
+      tags:
+        - User Copy
+      summary: EditUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 8
+                nama_lengkap: ''
+                username: ''
+                password: ''
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/api/delete:
+    delete:
+      tags:
+        - User Copy
+      summary: DeleteUser
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/product/:
+    get:
+      tags:
+        - Product Copy
+      summary: GetProduct
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Product Copy
+      summary: AddProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 29022003
+                name: Mobil
+                price: 17000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/product/id:
+    put:
+      tags:
+        - Product Copy
+      summary: UpdateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 29022003
+                name: Motor
+                price: 17000
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Product Copy
+      summary: New Request
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/plant/:
+    get:
+      tags:
+        - Plant Copy
+      summary: GetPlant
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/plant/tt:
+    post:
+      tags:
+        - Plant Copy
+      summary: AddPlant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 290220009
+                nama_ilmiah: Solanum lycopersicum
+                nama_umum: Tomat
+                kelompok: Solanaceae
+                genus: Solanum
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/plant/id:
+    put:
+      tags:
+        - Plant Copy
+      summary: UpdatePlant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 29022001
+                nama_ilmiah: Solanum lycopersicum
+                nama_umum: Tomat
+                kelompok: Solanaceae
+                genus: Solanum
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Plant Copy
+      summary: DeletePlant
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/penyakit/:
+    get:
+      tags:
+        - Pdiseases Copy
+      summary: GetPdiseases
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/penyakit/tpd:
+    post:
+      tags:
+        - Pdiseases Copy
+      summary: AddPdiseases
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 110501001
+                nama_penyakit: Bintik Tomat
+                lingkup: Tomato
+                gejala: >-
+                  Tumbuhan tomat terlihat layu, dan daunnya menguning serta
+                  berbintik
+                penyebab: Biasa disebabkan oleh jamur Phytophthora
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /mhs714220015/api/penyakit/id:
+    put:
+      tags:
+        - Pdiseases Copy
+      summary: UpdatePdiseases
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: 110501001
+                nama_penyakit: Bintik Tomat
+                lingkup: Tomato
+                gejala: >-
+                  Tumbuhan tomat terlihat layu, dan daunnya menguning serta
+                  berbintik
+                penyebab: Biasa disebabkan oleh jamur Phytophthora
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Pdiseases Copy
+      summary: DeletePdiseases
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
